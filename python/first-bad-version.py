@@ -5,6 +5,7 @@
 #        # return true if unit tests passed else false.
 # You can use SVNRepo.isBadVersion(10) to check whether version 10 is a 
 # bad version.
+# Lintcode version of this problem. It might be slightly different in details from the version on Leetcode.
 class Solution:
     """
     @param n: An integer
@@ -13,7 +14,7 @@ class Solution:
     def findFirstBadVersion(self, n):
         # write your code here
         if n <= 0:
-            return -1
+            return -1 
         
         start = 1 
         end = n
