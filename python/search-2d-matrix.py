@@ -14,7 +14,7 @@ class Solution:
         
         while start + 1 < end:
             mid = start + (end - start) / 2
-            if matrix[int(mid / n)][int(mid % n)] < target:
+            if matrix[int(mid / n)][int(mid % n)] < target:  #mid can be float, therefore here needs to be converted to integers
                 start = mid
             elif matrix[int(mid / n)][int(mid % n)] < target:
                 return True
