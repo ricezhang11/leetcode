@@ -21,7 +21,7 @@ class Solution:
             else:
                 end = mid
                 
-        if matrix[int(start / n)][int(start % n)] == target or matrix[int(end / n)]         [int(end % n)] == target:
+        if matrix[int(start / n)][int(start % n)] == target or matrix[int(end / n)][int(end % n)] == target:
             return True
         else:
             return False
