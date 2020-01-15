@@ -13,3 +13,4 @@ class Solution:
         
         for j in range(0, length):
             print(nums[j])
+         #Question! why this doesn't work?? why have to return an integer?????   
