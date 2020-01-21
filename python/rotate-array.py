@@ -11,5 +11,5 @@ class Solution:
             return
         else:
             nums[:((len(nums)-k)%len(nums))] = nums[:((len(nums)-k)%len(nums))][::-1]
-            nums[((len(nums)-k)%len(nums)):] = nums[((len(nums)-k)%len(nums)):][::-1]
+            nums[((len(nums)-k)%len(nums)):] = nums[((len(nums)-k)%len(nums)):][::-1] . #interesting thing is that the index can go above the length of array
             nums[:] = nums[::-1]
