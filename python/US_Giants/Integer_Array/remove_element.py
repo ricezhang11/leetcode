@@ -50,8 +50,9 @@ class Solution:
             while A[-1] == elem:
                 A.pop()
                 l -= 1
-                if l == i: #this line is very important. avoid the situation where the set has been popped to empty but i still stay there
-                           #then the next command will get index out of range. 
+ #this line is very important. avoid the situation where the set has been popped to empty but i still stay there
+ #then the next command will get index out of range.
+                if l == i:  
                     return l
             if A[i] == elem:
                 A[i], A[-1] = A[-1], A[i]
