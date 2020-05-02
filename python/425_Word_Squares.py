@@ -3,7 +3,8 @@ class trieNode:
     def __init__(self):
         self.children = {}
         self.isWord = False
-        self.word = None
+        # use self.word to save the word ending at this node so that it's easy to retrieve
+        self.word = None  
         
 class trie:
     def __init__(self):
@@ -22,7 +23,7 @@ class trie:
         node.word = word
         
     def startWith(self, prefix):
-        
+        #coded this dfs to return all words that have the given prefix
         def search(node, res):
             if node.isWord == True:
                 res.append(node.word)
@@ -61,26 +62,34 @@ class Solution:
             tree.insert(word)
         length = len(words[0])
         res = []
+        
+        # pick the first word
         for word in words:
+            
+            # index is for deciding the next word's prefix
             self.search_helper(1, tree, [word], res, length)
             
         return res
         
     def search_helper(self, index, tree, path, res, length):
         
+        # if the length of path is already equal to length, then our job is done
         if len(path) == length:
             res.append(copy.copy(path))
             return 
         
+        # update the prefix
         prefix = ''
         for p in path:
             prefix += p[index]
-        
+            
+        # if there're no words having the given prefix, then we should go back and try other words
         if not tree.startWith(prefix):
             return 
         
         for w in tree.startWith(prefix):
             path.append(w)
+            # everytime, index should increment by 1 to update the prefix
             self.search_helper(index + 1, tree, path, res, length)
             path.pop()
         return 
